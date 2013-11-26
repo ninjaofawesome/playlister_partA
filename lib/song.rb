@@ -21,10 +21,10 @@ class Song
 
 
 	def input_song_title
-		song_title << "Peso"
+		song_title << put regex here
 		puts song_title
 	end
-	
+
 	# def input_song_title
 	# 	song_title << "Peso"
 	# 	puts song_title
@@ -36,4 +36,4 @@ class Song
 end
 baller_song = Song.new
 # baller_song = Song.new("Peso", "dance", "A$AP Rocky")
-puts baller_song.inspect
+puts baller_song.input_song_title.inspect
