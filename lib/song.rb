@@ -1,32 +1,20 @@
-Dir["./spec/*.rb"].each {|file| require file }
-Dir["./data/*.mp3"].each {|file| require file }
-
+# Dir["./spec/*.rb"].each {|file| require file }
+Dir["./lib/each_song/*.rb"].each {|file| require file }
+# Dir["./lib/*.rb"].each {|file| require file }
+# require './lib/each_song/*.rb'
 
 class Song
 
-	attr_reader :song_title, :genre, :artist
-
-	def initialize
-		@song_title = []
-		@genre = []
-		@artist = []
-	end
-
+	def self.music_array
+		music_collection = []
+		 Dir["lib/each_song/*.rb"].each do |song_hash|
+			music_collection << song_hash
 	
-	def input_song_title
-		song_title << put regex here
-		puts song_title
+		end
 	end
-
-	def input_song_genre
-
-	end
-
-	def input_artist
-
-	end
-
 
 
 end
-baller_song = Song.new
+
+p Song.music_array
+
