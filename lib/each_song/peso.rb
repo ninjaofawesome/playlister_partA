@@ -19,7 +19,7 @@ class Each_song
 	end
 
 	def song_hash
-		song_hash = {:song_title => song_title, :genre => genre, :artist => artist}
+		{:song_title => song_title, :genre => genre, :artist => artist}
 	end
 
 end

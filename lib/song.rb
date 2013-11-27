@@ -8,7 +8,7 @@ class Song
 	def self.music_array
 		music_collection = []
 		 Dir["lib/each_song/*.rb"].each do |song_hash|
-			music_collection << song_hash
+			music_collection << Each_song.song_hash
 	
 		end
 	end
