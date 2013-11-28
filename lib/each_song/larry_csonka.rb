@@ -2,9 +2,9 @@
 #not sure why this isn't working, ah well.
 # require './lib/*'
 # require './spec/*'	
-
+require './lib/*'
 Dir["./spec/*.rb"].each {|file| require file }
-Dir["./lib/*.rb"].each {|file| require file }
+# Dir["./lib/*.rb"].each {|file| require file }
 
 
 
