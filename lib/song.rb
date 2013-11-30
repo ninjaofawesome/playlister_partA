@@ -1,60 +1,54 @@
 # Dir["./spec/*.rb"].each {|file| require file }
-# Dir["./lib/each_song/*.rb"].each {|file| require file }
+Dir["./lib/each_song/*.rb"].each {|file| require file }
 # Dir["./lib/*.rb"].each {|file| require file }
 # require './lib/each_song/*.rb'
 
 # require '/Users/hannahnordgren/documents/playlister_partA/lib/each_song/*'
 
-class Song
+class Song #< Artist
 
-		# @@music_collection = Dir.new("/Users/hannahnordgren/documents/playlister_partA/data").entries
-		# @@music_collection = Dir.new("/Users/hannahnordgren/documents/playlister_partA/lib/each_song").entries
+@@music_collection = Dir.new("/Users/hannahnordgren/documents/playlister_partA/data").entries
 
-	def self.music_array
-		each_song = []
-	# 	each_song = @@music_collection
-		each_song_file = File.foreach("/Users/hannahnordgren/documents/playlister_partA/lib/each_song") 
-			{ |hash| each_song << hash }
-	end
+attr_accessor :music
+
+def intialize
+	@music = []
 end
 
+# def get_title
 
-		
+# end
 
-		
+# def get_artist
+
+# end
+
+# def get_genre
+
+# end
+
+def self.get_format
+	@@music_collection.each do |string|
+		puts /(\.mp3|\.wma|\.mp4)/.match(string)
+	end
+end
+# 1. create an empty array
+# 2. the array will contain hashes.  Artist, Title, Genre and Format.
+# 3. Go into each string, pull out the artist.  Make this into the value on your Artist key.
+# 4. Do the same for Title
+# 5. Do the same for Genre
+# 6. Do the same for format
+
+#/([^\"\-\[\s\]])/ works for any word
+#/[\.mp3]/ pulls out just the mp3
+#/(\[dance\]|\[indie\]|\[folk\]|\[country\]|\[pop\]|\[hip\-hop\]|\[house\]|\[rap\]|\[electro\])/ pulls out genre
 
 
-
-
-		# extract = /\w/.match(@@music_collection)
-		# p extract
-
+# /[^\W+]/ takes out just the words
 	
+end
 
-	# def create_song_hash
-	# 	music_hash = Hash[@@music_collection.flatten]
-	# 	p music_hash
-	# end
+song_collection = Song.get_format
+p song_collection
 
-# end
-
-# name = Song.split_array
-# p name
-
-
-
-
-# 	def self.music_array
-# 		music_collection = []
-# 		each_song = Dir.new("/Users/hannahnordgren/documents/playlister_partA/lib/each_song")
-# 		each_song.entries.each do
-# 		# each_song.entries
-# 			music_collection << each_song.entries
-# 		end
-# 	end
-# end
-
-
-# song_array = Song.music_array
-# p song_array
-
+		
