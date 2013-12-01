@@ -1,17 +1,26 @@
 Dir["./spec/*.rb"].each {|file| require file }
-Dir["./data/individual_songs/*.mp3"].each {|file| require file }
+# Dir["./data/*"].each {|file| require file }
+require './song'
 
 
 
 
 class Artist
 
-	def count_genre_types
+	def self.count_genres
+	music.each do |key,value|
+		genre = music.select {|key, value| key[2] == :genre }
+		p genre
+	end
+
+	# music = { :artist => entry[1], :title => entry[2], :genre => entry[3], :format => entry[4],} 
+	# p music
 
 	end
 
-	def count_songs
+	# def count_songs
 
-	end
+	# end
 
 end
+
