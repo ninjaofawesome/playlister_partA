@@ -27,16 +27,15 @@ end
 # end
 
 def self.get_genre
-@@music_collection.each do |string|	
-		entry = /(\w*)(?=\])/.match(string)
-	@music[:genre] = entry
-end	
+	flat = @@music_collection.join(",")
+	entry = /\w*(?=\])/.match(flat)
+	@music = {:genre => entry[0] } 	
 end
 
 def self.get_format
 	flat = @@music_collection.join(",")
-	entry = /(mp3|wma|mp4)/.match(flat)
-	@music = {:format => entry } 
+	entry = /mp3|wma/.match(flat)
+	@music = {:format => entry[0] } 
 end
 
 
@@ -57,7 +56,7 @@ end
 	
 end
 
-song_collection = Song.get_genre
-p song_collection.inspect
+song_collection = Song.get_format
+p song_collection
 
 		
