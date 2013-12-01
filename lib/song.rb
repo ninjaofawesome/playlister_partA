@@ -9,10 +9,13 @@ class Song #< Artist
 
 @@music_collection = Dir.new("/Users/hannahnordgren/documents/playlister_partA/data").entries
 
-attr_accessor :music
+attr_accessor :music, :music_format, :array
 
 def intialize
-	@music = []
+	@array = @@music_collection.flatten!
+	@music = {}
+	@music_format = {}
+
 end
 
 # def get_title
@@ -23,15 +26,21 @@ end
 
 # end
 
-# def get_genre
-
-# end
+def self.get_genre
+@@music_collection.each do |string|	
+		entry = /(\w*)(?=\])/.match(string)
+	@music[:genre] = entry
+end	
+end
 
 def self.get_format
-	@@music_collection.each do |string|
-		puts /(\.mp3|\.wma|\.mp4)/.match(string)
-	end
+	flat = @@music_collection.join(",")
+	entry = /(mp3|wma|mp4)/.match(flat)
+	@music = {:format => entry } 
 end
+
+
+
 # 1. create an empty array
 # 2. the array will contain hashes.  Artist, Title, Genre and Format.
 # 3. Go into each string, pull out the artist.  Make this into the value on your Artist key.
@@ -48,7 +57,7 @@ end
 	
 end
 
-song_collection = Song.get_format
-p song_collection
+song_collection = Song.get_genre
+p song_collection.inspect
 
 		
