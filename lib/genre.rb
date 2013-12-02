@@ -39,3 +39,106 @@ class Genre < Artist
 
 
 end
+
+# class Artist
+
+# end
+
+
+# class Genre
+
+# attr_accessor :genre
+
+# def initialize(genre)
+# 	@genre = genre
+# end
+
+# def list_genre_dance
+# 	dance = []
+# 	genre.each do |k,v|
+# 		if v[entry[3]]  == "dance"
+# 			dance << v[entry[1]]
+# 		end
+# 	dance 
+# end
+
+
+# def list_genre_folk
+# 	folk = []
+# 	genre.each do |k,v|
+# 		if v[entry[3]]  == "folk"
+# 			folk << v[entry[1]]
+# 		end
+# 	folk 
+# end
+
+
+# def list_genre_indie
+# 	indie = []
+# 	genre.each do |k,v|
+# 		if v[entry[3]]  == "indie"
+# 			indie << v[entry[1]]
+# 		end
+# 	indie 
+# end
+
+
+# def list_genre_country
+# 	country = []
+# 	genre.each do |k,v|
+# 		if v[entry[3]]  == "country"
+# 			country << v[entry[1]]
+# 		end
+# 	country 
+# end
+
+
+# def list_genre_pop
+# 	pop = []
+# 	genre.each do |k,v|
+# 		if v[entry[3]]  == "pop"
+# 			pop << v[entry[1]]
+# 		end
+# 	pop 
+# end
+
+
+# def list_genre_hiphop
+# 	hiphop = []
+# 	genre.each do |k,v|
+# 		if v[entry[3]]  == "hiphop"
+# 			hiphop << v[entry[1]]
+# 		end
+# 	hiphop 
+# end
+
+
+# def list_genre_house
+# 	house = []
+# 	genre.each do |k,v|
+# 		if v[entry[3]]  == "house"
+# 			house << v[entry[1]]
+# 		end
+# 	house 
+# end
+
+# def list_genre_rap
+# 	rap = []
+# 	genre.each do |k,v|
+# 		if v[entry[3]]  == "rap"
+# 			rap << v[entry[1]]
+# 		end
+# 	rap 
+# end
+
+
+# def list_genre_electro
+# 	electro = []
+# 	genre.each do |k,v|
+# 		if v[entry[3]]  == "electro"
+# 			electro << v[entry[1]]
+# 		end
+# 	electro 
+# end
+
+# end

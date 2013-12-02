@@ -1,5 +1,5 @@
-Dir["./spec/*.rb"].each {|file| require file }
-require './artist'
+# Dir["./spec/*.rb"].each {|file| require file }
+# require './artist'
 
 class Song
 
