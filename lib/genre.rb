@@ -1,30 +1,41 @@
 Dir["./spec/*.rb"].each {|file| require file }
-# Dir["./data/*.mp3"].each {|file| require file }
-Dir["./lib/individual_songs/*.mp3"].each {|file| require file }
+require './artist'
+require './song'
 
 
 class Genre < Artist
 
-	# def initialize
+	def genre
+			genre = {:artist => entry[1], :genre => entry[3]}
+			#p genre
+				info = genre.each {|k, v|
+						# puts v[entry[3]]
+						if v[entry[3]] == "dance"
+							puts "this genre is associated with #{[entry[1]]}"
+						elsif v[entry[3]] == "rap"
+							puts "this genre is associated with #{[entry[1]]}"
+						elsif v[entry[3]] == "electro"
+							puts "this genre is associated with #{[entry[1]]}"
+						elsif v[entry[3]] == "indie"
+							puts "this genre is associated with #{[entry[1]]}"
+						elsif v[entry[3]] == "hip-hop"
+							puts "this genre is associated with #{[entry[1]]}"
+						elsif v[entry[3]] == "country"
+							puts "this genre is associated with #{[entry[1]]}"
+						elsif v[entry[3]] == "pop"
+							puts "this genre is associated with #{[entry[1]]}"
+						elsif v[entry[3]] == "house"
+							puts "this genre is associated with #{[entry[1]]}"
+						elsif v[entry[3]] == "folk"
+							puts "this genre is associated with #{[entry[1]]}"	
+						else
+							puts " "
+						end
+					}
+				puts info
 
-	# end
-
-	def count_songs
-		songs = []
-		songs << song_title 
-		super songs.count #this doesn't span across multiple song files. to fix
 	end
 
-	def count_genres
-		genre_count = []
-		genre_count << genre 
-		super genre_count #this doesn't span across multiple song files. to fix
-	end
 
-	#artist is still stuck in the song file but not necessary for genre.
-
-	def artist_name
-		artist
-	end
 
 end
