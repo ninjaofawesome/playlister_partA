@@ -8,6 +8,8 @@ class Artist
 		@artist = []
 		@artist_count = []
 		@biglist = []
+		@artists = []
+		@counts = Hash.new(0)
 	end
 
 	#lists just the individual artist/bands names
@@ -44,7 +46,19 @@ class Artist
 		@biglist
 	end
 
+#An overall count of all the songs by artist
 
+	def artist_count
+		@music_collection.each do |track|
+			entry = /(.*) \-/.match(track)
+			next unless entry
+			@artists << entry[1]
+		end
+		@artists.each do |artist| 
+			@counts[artist] += 1 
+			end
+		@counts
+	end
 
 
 	#just lists whatever the artist wants to put in for file formats.  Consider this a bonus round.
@@ -88,12 +102,15 @@ band_count = artist.band_count
 
 biglist = Artist.new(music_collection)
 band_and_song = biglist.big_list
-p band_and_song
+# p band_and_song
+
+counts = Artist.new(music_collection)
+counted_songs = counts.artist_count
+p counted_songs
 
 # artist = Artist.new(music_collection)
 # format_list = artist.format_lists
 # p format_list
-
 
 artist = Artist.new(music_collection)
 destroy = artist.salt_the_earth
